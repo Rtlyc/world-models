@@ -41,7 +41,7 @@ I have not run this for long enough(~45 days wall clock time) to verify that we 
 
 Average return curves comparing the original implementation and ours. The shaded area represents a standard deviation above and below the mean. 
 
-![alt text](imgs/og_carracing_comparison.png "CarRacing-v0 comparison")
+![alt text](imgs/train_plot.png "CarRacing-v0 comparison")
 
 For simplicity, the Doom experiment implementation is slightly different than the original
 * We do not use weighted cross entropy loss for done predictions 
