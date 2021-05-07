@@ -2,10 +2,10 @@
 This repo reproduces the [original implementation](https://github.com/hardmaru/WorldModelsExperiments) of [World Models](https://arxiv.org/abs/1803.10122). This implementation uses TensorFlow 2.2.
 
 ## What We Have Done
-####- Task One
+#### Task One
 
 
-####- Task Two
+#### Task Two
 
 We manage to set up the project and go through the pipeline of Car-racing learning process. 
 
@@ -27,7 +27,7 @@ make real CarRacing environment and start training with 4 workers. Save all the 
 logs can be found [here](./runlog.txt)
 
 
-####- Task Three (GAN-VAE)
+#### Task Three (GAN-VAE)
 [gan.py](./WorldModels/gan.py) or [vae-gan.ipynb](./WorldModels/vae-gan.ipynb) 
 We look into GAN method and implement it in our case so that it could use data generated in the [record folder](./WorldModels/results/WorldModels/CarRacing-v0/record) with args(batch_size=32, Depth=32, Latent_depth=512, K_size=10, learning_rate=0.0001, normal_coefficient=0.1, kl_coefficient=0.01). The Discriminator, Encoder, and Generator weights can be find in the [saved-models folder](./WorldModels/saved-models), training logs can be found [here](./WorldModels/logs/sep_D32L512)
 
@@ -42,12 +42,16 @@ docker attach wm
 ## Visualizations
 To visualize the environment from the agents perspective or generate synthetic observations use the [visualizations jupyter notebook](WorldModels/visualizations.ipynb). It can be launched from your container with the following:
 ```
-jupyter notebook --no-browser --port=8888 --ip=0.0.0.0 --allow-root
+xvfb-run -s "-screen 0 1400x900x24" jupyter notebook --port=8888 --ip=0.0.0.0 --allow-root
 ```
 
 Real Frame Sample             |  Reconstructed Real Frame  |  Imagined Frame
 :-------------------------:|:-------------------------:|:-------------------------:|
 ![alt-text-1](imgs/real_frame.png "Real Frame")| ![alt-text-2](imgs/reconstructed_real.png "Reconstructed Frame") | ![alt-text-3](imgs/imagined_frame.png "Imagined Frame")
+
+Ground Truth (CarRacing)             |  Reconstructed
+:-------------------------:|:-------------------------:
+<img src="imgs/true_episode.gif" alt="drawing" width="500"/> | <img src="imgs/reconstructed_episode.gif" alt="drawing" width="500"/>
 
 
 ## Reproducing Results From Scratch
