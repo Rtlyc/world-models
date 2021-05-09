@@ -3,7 +3,7 @@ This repo reproduces the [original implementation](https://github.com/hardmaru/W
 
 ## What We Have Done
 #### Task One
-
+[PaperWork](./WorldModels_Report.pdf)
 
 #### Task Two
 
